@@ -1,6 +1,5 @@
 package com.harsha.studentservice.controller;
 
-import com.harsha.studentservice.client.StudentClient;
 import com.harsha.studentservice.model.Student;
 import com.harsha.studentservice.services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
