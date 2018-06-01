@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Logger;
@@ -21,11 +22,23 @@ import java.util.logging.Logger;
 @RequestMapping("/v1")
 public class CourseController {
 
-    private List<Course> courses = Arrays.asList(
+/*    private List<Course> courses = Arrays.asList(
             new Course(123L, "java", "Java Course", 25 ),
             new Course(124L, "spring", "Spring Fundamentals Course", 24 ),
             new Course(125L, "javascript", "Java Script Course", 23 )
-    );
+    );*/
+
+    private List<Course> courses = new ArrayList<>();
+    public CourseController(){
+        Course course1 = new Course(123L, "java", "Java Course", 25 );
+        Course course2 = new Course(124L, "spring", "Spring Fundamentals Course", 24 );
+        Course course3 = new Course(125L, "javascript", "Java Script Course", 23 );
+
+        courses.add(course1);
+        courses.add(course2);
+        courses.add(course3);
+
+    }
 
     @LoadBalanced
     @Bean
